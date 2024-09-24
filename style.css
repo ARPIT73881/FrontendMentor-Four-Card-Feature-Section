@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+/* Weights: 200, 400, 600*/
+
+:root {
+  /* ### Primary */
+
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* ### Neutral */
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+/* ===============  reset  ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===============  reusable box class  =============== */
+.box {
+  max-width: 350px;
+  min-height: 250px;
+  padding: 2rem;
+  border-radius: 6px;
+  border-top: 4px solid;
+  box-shadow: 0 15px 35px -15px var(--Grayish-Blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* box styling image */
+figure {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+/* ===============  individual box styling  =============== */
+.box-one {
+  border-top-color: var(--Cyan);
+  grid-area: supervisor;
+}
+.box-two {
+  border-top-color: var(--Red);
+  grid-area: teambuilder;
+}
+.box-three {
+  border-top-color: var(--Orange);
+  grid-area: karma;
+}
+.box-four {
+  border-top-color: var(--Blue);
+  grid-area: calculator;
+}
+
+/* ===============  main container  =============== */
+.container {
+  background-color: var(--Very-Light-Gray);
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+/* ===============  section part one text  =============== */
+
+/* section one */
+.text {
+  text-align: center;
+  margin-block: 24px;
+}
+
+/* heading text upper */
+.text h1 {
+  font-size: 1.5rem;
+  color: var(--Very-Dark-Blue);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* heading main */
+.text span {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/* heading paragraph */
+.text p {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: var(--Grayish-Blue);
+  padding-inline: 36px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+/* ===============  section part two box grid =============== */
+
+/* section two */
+.grid-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  grid-template-areas:
+    "supervisor"
+    "teambuilder"
+    "karma"
+    "calculator";
+  gap: 24px;
+  padding-block: 24px;
+}
+
+/* inside the box */
+.box-inside-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* box heading */
+.box h2 {
+  font-size: 1.2rem;
+  color: var(--Very-Dark-Blue);
+}
+/* box paragraph */
+.box p {
+  font-weight: 200;
+  font-size: 0.8rem;
+  color: var(--Grayish-Blue);
+  letter-spacing: 0.02rem;
+  line-height: 22px;
+}
+
+.box-four p {
+  padding-right: 1rem;
+}
+
+/* ===============  responsivenes  =============== */
+
+/* small device */
+@media (min-width: 400px) {
+  /* heading text upper */
+  .text h1 {
+    font-size: 1.9rem;
+  }
+
+  /* heading main */
+  .text span {
+    font-size: 1.9rem;
+  }
+
+  /* heading paragraph */
+  .text p {
+    font-size: 1.1rem;
+  }
+}
+
+/* medium device */
+@media (min-width: 576px) {
+  .text h1 {
+    font-size: 2.5rem;
+  }
+
+  /* heading main */
+  .text span {
+    font-size: 2.5rem;
+  }
+
+  /* heading paragraph */
+  .text p {
+    font-size: 0.9rem;
+    padding-inline: 72px;
+  }
+}
+
+/* big device */
+@media (min-width: 720px) {
+  .grid-container {
+    grid-template-areas:
+      "supervisor teambuilder calculator"
+      "supervisor karma calculator";
+  }
+
+  /* heading paragraph */
+  .text p {
+    width: 55%;
+    font-size: 0.9rem;
+    margin-inline: auto;
+    /* padding-inline: 200px; */
+  }
+}
